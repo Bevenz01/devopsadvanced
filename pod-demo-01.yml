@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: envar01-demo
+  labels:
+    purpose: demo-pod-envars
+spec:
+  containers:
+  - name: envar01-demo-container
+    image: gcr.io/google-samples/node-hello:1.0
+    env:
+    - name: Sample_ENVAR
+      value: "Welcome to pod envar demo"
+    - name: Creator
+      value: BP
+      
+      
+  #How to print envar
+  #kubectl exec -it envar-demo -- /bin/bash
+  ## Run this in the shell inside the container
+    # printenv
